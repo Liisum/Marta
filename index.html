@@ -10,29 +10,33 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <h1 class="brand">Marta Kitter</h1>
-        <p class="tagline">Actress | Singer | Musical Performer</p>
-        <div class="view-toggle" role="group" aria-label="View mode">
-          <button type="button" class="toggle-btn" data-mode="table" aria-pressed="false">Table</button>
-          <button type="button" class="toggle-btn" data-mode="cards" aria-pressed="false">Cards</button>
-        </div>
-      </div>
-    </header>
+    <button id="menuBtn" class="menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="siteMenu">☰</button>
+    <nav id="siteMenu" class="menu" hidden>
+      <ul>
+        <li><a href="#schooling">Schooling</a></li>
+        <li><a href="#training">Additional Training</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#theatre">Theatre</a></li>
+        <li><a href="#films">Films</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    
 
     <main>
       <section id="hero" class="hero">
-        <div class="hero-media">
-          <img src="assets/photos/martakitter1.jpeg" alt="Marta Kitter" />
-          <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content container">
-          <h2 class="hero-title">Marta Kitter</h2>
-          <p class="hero-sub">Actress | Singer | Musical Performer</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn">Contact</a>
-            <a href="#gallery" class="btn outline">View Gallery</a>
+        <div class="container hero-split">
+          <div class="hero-photo">
+            <img src="assets/photos/martakitter1.jpeg" alt="Portrait of Marta Kitter" />
+          </div>
+          <div class="hero-text">
+            <h1 class="hero-title">Marta Kitter</h1>
+            <p class="hero-sub">Actress | Singer | Musical Performer</p>
+            <p class="hero-blurb">Marta is a young theatre and musical actress with experience in productions across Estonia and Argentina, including The Sound of Music, Buratino, and El mundo mágico de los sueños as Anna from Frozen.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn">Contact</a>
+              <a href="#gallery" class="btn secondary">View Gallery</a>
+            </div>
           </div>
         </div>
       </section>
@@ -248,6 +252,23 @@
         }));
       })();
 
+      // Simple dropdown menu toggle
+      (function(){
+        const btn = document.getElementById('menuBtn');
+        const menu = document.getElementById('siteMenu');
+        if(!btn || !menu) return;
+        function close(){ menu.hidden = true; btn.setAttribute('aria-expanded','false'); }
+        function open(){ menu.hidden = false; btn.setAttribute('aria-expanded','true'); }
+        btn.addEventListener('click', ()=>{
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          expanded ? close() : open();
+        });
+        document.addEventListener('click', (e)=>{
+          if(!menu.hidden && !menu.contains(e.target) && e.target !== btn){ close(); }
+        });
+        menu.querySelectorAll('a').forEach(a=> a.addEventListener('click', close));
+      })();
+
       // Contact form submit (replace endpoint when ready)
       (function(){
         const form = document.getElementById('contactForm');
@@ -330,4 +351,9 @@
   </body>
   </html>
 
-
+  cd "/Users/mari-liiskitter/Desktop/Cursor first test/andres/marta"
+  git status
+  git add .
+  git commit -m "Update hero, bio, gallery, colors"
+  git push
+  
