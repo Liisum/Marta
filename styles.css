@@ -119,7 +119,7 @@ body{
 .table-mode .table tbody td::before{content:none}
 
 /* Top-right dropdown menu */
-.menu-btn{position:fixed;top:12px;right:12px;z-index:50;border:1px solid #d1d5db;background:#fff;color:var(--navy);padding:8px 10px;border-radius:10px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.menu-btn{position:fixed;top:12px;right:12px;z-index:50;border:1px solid #d1d5db;background:#fff;color:var(--navy);padding:12px 14px;border-radius:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);font-size:18px}
 .menu{position:fixed;top:56px;right:12px;z-index:50;background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.1);min-width:220px}
 .menu ul{list-style:none;margin:0;padding:8px}
 .menu li{margin:0}
