@@ -1,0 +1,8 @@
+cd "/Users/mari-liiskitter/Desktop/Cursor first test/andres/marta"
+git init
+git branch -M main
+echo ".DS_Store" >> .gitignore
+git add .
+git commit -m "Initial commit: Marta Kitter portfolio"
+git remote add origin https://github.com/Liisum/Marta.git
+git push -u origin main
